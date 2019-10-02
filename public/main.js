@@ -1,7 +1,2 @@
-const main = () => {
-  if (document.querySelector('h1.hello-world')) {
-    document.querySelector('h1.hello-world').textContent = 'Hello, World!'
-  }
-}
-
-document.addEventListener('DOMContentLoaded', main)
+let randomNum = Math.floor(Math.random() * 52 + 1)
+console.log(randomNum)
