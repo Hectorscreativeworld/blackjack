@@ -9,15 +9,28 @@ for (s in suits) {
   let bgcolor = suit == 'S' || suit == 'C' ? 'black' : 'red'
 
   for (n in numb) {
-    output.innerHTML +=
-      "<span style='color:" +
-      bgcolor +
-      "'>&" +
-      suits[s] +
-      ';' +
-      numb[n] +
-      '</span>'
+    let cardValue = n > 9 ? 10 : parseInt(n) + 1
+    let card = {
+      suit: suit,
+      icon: suits[s],
+      bgcolor: bgcolor,
+      cardnum: numb[n],
+      cardvalue: cardValue
+    }
+    cards.push(card)
   }
 }
-let randomNum = Math.floor(Math.random() * 52 + 1)
-console.log(randomNum)
+
+console.log(cards)
+function ranCard() {
+  let randomNum = Math.floor(Math.random() * 52)
+  output.innerHTML +=
+    "<span style='color:" +
+    cards[randomNum].bgcolor +
+    "'>&" +
+    cards[randomNum].icon +
+    ';' +
+    cards[randomNum].cardnum +
+    '</span> '
+}
+ranCard()
