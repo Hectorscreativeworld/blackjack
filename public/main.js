@@ -22,7 +22,7 @@ for (s in suits) {
 }
 
 console.log(cards)
-function ranCard() {
+function Start() {
   let randomNum = Math.floor(Math.random() * 52)
   output.innerHTML +=
     "<span style='color:" +
@@ -33,4 +33,3 @@ function ranCard() {
     cards[randomNum].cardnum +
     '</span> '
 }
-ranCard()
